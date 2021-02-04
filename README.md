@@ -3,80 +3,51 @@
 Este projeto consiste em realizar uma classificação de uma negociação(TRADE) baseado em uma lista de negociações passada como argumento
 
 
-Here you should say what actually happens when you execute the code above.
+### Configuraçao Inicial
 
-### Initial Configuration
+No Vs2019 deve-se abrir as propriedades do projeto seleciona a aba Debug e adicionar a lista de parâmetros de entrada conforme modelo abaixo:
 
-Some projects require initial configuration (e.g. access tokens or keys, `npm i`).
-This is the section where you would document those requirements.
-
-## Developing
-
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
-
-```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
-packagemanager install
-```
-
-And state what happens step-by-step.
-
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-### Deploying / Publishing
-
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-```shell
-packagemanager deploy awesome-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
-
-## Features
-
-What's all the bells and whistles this project can perform?
-* What's the main functionality
-* You can also do another thing
-* If you get really randy, you can even do this
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when
-using the project.
-
-#### Argument 1
-Type: `String`  
-Default: `'default value'`
-
-State what an argument does and how you can use it. If needed, you can provide
-an example below.
-
-Example:
 ```bash
-awesome-project "Some other value"  # Prints "You're nailing this readme!"
+Ex.: "11/12/2020" "4" "2000000 Privado 29/12/2025" "400000 Público 01/07/2020" "5000000 Público 01/02/2024" "3000000 Público 26/10/2023"
 ```
 
-#### Argument 2
-Type: `Number|Boolean`  
-Default: 100
+Obs.: Essa lista já está sendo enviada na inicialização do projeto. Caso queira realizar a entrada passando os parêmetros em tempo de execução esse campo deve ser apagado e o seguinte comando deve ser executado no caminho onde se encontra o binario TradeClassification.exe
 
-Copy-paste as many of these as you need.
+```bash
+Ex.: TradeClassification.exe "11/12/2020" "4" "2000000 Privado 29/12/2025" "400000 Público 01/07/2020" "5000000 Público 01/02/2024" "3000000 Público 26/10/2023"
+```
+
+#### Argument 1 - Data Referência
+Type: `String`  
+Formato: Data 'mm/dd/aaaa'`
+
+Exemplo:
+```bash
+"11/12/2020"
+```
+
+#### Argument 2 - Número de linhas de trade
+Type: `String`  
+Inteiro: > 0 
+Exemplo:
+```bash
+"4"
+```
+
+#### Argument 3 - Linha trade a ser classificada
+Type: `String`  
+Formato: "Arg1 Arg2 Arg3"  
+
+Arg1: Double 
+Arg2: String 
+Arg3: Data 'mm/dd/aaaa'`
+
+Exemplo:
+```bash
+"2000000 Privado 29/12/2025"
+```
+
+
 
 
 
