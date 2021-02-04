@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradeClassification", "TradeClassification.csproj", "{B90D3103-FFA6-4BAD-B0E1-59833CCDC5BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeClassificationTest", "..\TradeClassificationTest\TradeClassificationTest.csproj", "{61735C73-22A5-410F-92FD-86132220FF18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B90D3103-FFA6-4BAD-B0E1-59833CCDC5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90D3103-FFA6-4BAD-B0E1-59833CCDC5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90D3103-FFA6-4BAD-B0E1-59833CCDC5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90D3103-FFA6-4BAD-B0E1-59833CCDC5BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61735C73-22A5-410F-92FD-86132220FF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61735C73-22A5-410F-92FD-86132220FF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61735C73-22A5-410F-92FD-86132220FF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61735C73-22A5-410F-92FD-86132220FF18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EA3947E-455B-485D-8FCB-8B8A76388F71}
+	EndGlobalSection
+EndGlobal
