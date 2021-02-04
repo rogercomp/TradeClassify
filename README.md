@@ -1,5 +1,4 @@
 # TradeClassify
-> Additional information or tagline
 
 Este projeto consiste em realizar uma classificação de uma negociação(TRADE) baseado em uma lista de negociações passada como argumento
 
