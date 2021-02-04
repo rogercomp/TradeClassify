@@ -38,9 +38,9 @@ Exemplo:
 Type: `String`  
 Formato: "Arg1 Arg2 Arg3"  
 
-Arg1: Double 
-Arg2: String 
-Arg3: Data 'mm/dd/aaaa'`
+Arg1: "Double"  
+Arg2: "String"  
+Arg3: " Data 'mm/dd/aaaa"  
 
 Exemplo:
 ```bash
