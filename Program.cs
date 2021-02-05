@@ -6,25 +6,34 @@ namespace TradeClassification
     {
         static void Main(string[] args)
         {
-            if (args.Length > 0)
-            {
-                DateTime dataRef = DateTime.Parse(args[0]);
-                int n = int.Parse(args[1]);
-
-                for (int i = 2; i < (n + 2); i++)
+            int line = 0;
+            try
+            {               
+                if (args.Length > 0)
                 {
-                    string[] tradeLine = args[i].Split(" ");
-                    double value = Double.Parse(tradeLine[0]);
-                    string clientSector = tradeLine[1];
-                    DateTime nextPaymentDate = DateTime.Parse(tradeLine[2]);
-                    var context = new Context();
-                    context.DoBusinessLogic(dataRef, value, clientSector, nextPaymentDate);
+                    DateTime dataRef = DateTime.Parse(args[0]);
+                    line++;
+                    int n = int.Parse(args[1]);
+                    line++;
+                    for (int i = 2; i < (n + 2); i++)
+                    {
+                        string[] tradeLine = args[i].Split(" ");
+                        double value = Double.Parse(tradeLine[0]);
+                        string clientSector = tradeLine[1];
+                        DateTime nextPaymentDate = DateTime.Parse(tradeLine[2]);
+                        var context = new Context();
+                        context.DoBusinessLogic(dataRef, value, clientSector, nextPaymentDate);
+                        line++;
+                    }
                 }
-            }
-            else
+                else
+                {
+                    Console.WriteLine("No command line arguments found.");
+                }
+            }catch (Exception e)
             {
-                Console.WriteLine("No command line arguments found.");
-            }           
+                Console.WriteLine("Error reading information in line {0} . Please check! - " + e.Message, line);
+            }
         }
     }
 }
