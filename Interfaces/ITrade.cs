@@ -6,6 +6,12 @@ namespace TradeClassification.Interfaces
 {
     public interface ITrade
     {
+        public double Value { get; }
+        public string ClientSector { get; }
+        public DateTime NextPaymentDate { get; }
+        public Classification TradeClassify { get; set; }
+        public DateTime ReferenceDate { get; }
+
         string DoClassification(LineTrade _lineTrade);
     }
 }

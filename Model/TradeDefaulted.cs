@@ -10,7 +10,7 @@ namespace TradeClassification.Model
         public string ClientSector { get; }
         public DateTime NextPaymentDate { get; }
         public Classification TradeClassify { get; set; }
-        public DateTime RefDate { get; }
+        public DateTime ReferenceDate { get; }
 
         public TradeDefaulted()
         {
@@ -22,12 +22,12 @@ namespace TradeClassification.Model
             this.Value = _lineTrade.Value;
             this.ClientSector = _lineTrade.ClientSector;
             this.NextPaymentDate = _lineTrade.NextPaymentDate;
-            this.RefDate = _lineTrade.RefDate;
+            this.ReferenceDate = _lineTrade.ReferenceDate;
         }
 
         public string DoClassification(LineTrade _lineTrade)
         {
-            var diffDataPayment = (_lineTrade.RefDate - _lineTrade.NextPaymentDate).TotalDays;
+            var diffDataPayment = (_lineTrade.ReferenceDate - _lineTrade.NextPaymentDate).TotalDays;
             if (diffDataPayment > 30)
             {
                 this.TradeClassify = Classification.DEFAULTED;                
