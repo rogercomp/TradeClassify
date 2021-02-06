@@ -15,38 +15,24 @@ namespace TradeClassification.Model
         public TradeMediumRisk()
         {
 
+        }       
+
+        public TradeMediumRisk(LineTrade _lineTrade)
+        {
+            this.Value = _lineTrade.Value;
+            this.ClientSector = _lineTrade.ClientSector;
+            this.NextPaymentDate = _lineTrade.NextPaymentDate;
+            this.RefDate = _lineTrade.RefDate;            
         }
 
-        public TradeMediumRisk(double value, string clientSector, DateTime nextPaymentDate, DateTime refDate)
+        public string DoClassification(LineTrade _lineTrade)
         {
-            this.Value = value;
-            this.ClientSector = clientSector;
-            this.NextPaymentDate = nextPaymentDate;
-            this.RefDate = refDate;
-            DoClassification();
-        }
-
-        public TradeMediumRisk(ITrade trade)
-        {
-            this.Value = trade.Value;
-            this.ClientSector = trade.ClientSector;
-            this.NextPaymentDate = trade.NextPaymentDate;
-            this.RefDate = trade.RefDate;
-            DoClassification();
-        }
-
-        public void DoClassification()
-        {
-            if (this.Value > 1000000 && this.ClientSector.ToUpper() == "PUBLIC")
+            if (_lineTrade.Value > 1000000 && _lineTrade.ClientSector.ToUpper() == "PUBLIC")
                 this.TradeClassify = Classification.MEDIUMRISK;
             else
             {
                 this.TradeClassify = Classification.NOCATEGORY;
-            }            
-        }
-
-        public override string ToString()
-        {
+            }
             return this.TradeClassify.ToString();
         }
     }

@@ -17,42 +17,26 @@ namespace TradeClassification.Model
 
         }
 
-        public TradeDefaulted(double value, string clientSector, DateTime nextPaymentDate, DateTime refDate)
+        public TradeDefaulted(LineTrade _lineTrade)
         {
-            this.Value = value;
-            this.ClientSector = clientSector;
-            this.NextPaymentDate = nextPaymentDate;
-            this.RefDate = refDate;
-            DoClassification();
+            this.Value = _lineTrade.Value;
+            this.ClientSector = _lineTrade.ClientSector;
+            this.NextPaymentDate = _lineTrade.NextPaymentDate;
+            this.RefDate = _lineTrade.RefDate;
         }
 
-        public TradeDefaulted(ITrade trade)
+        public string DoClassification(LineTrade _lineTrade)
         {
-            this.Value = trade.Value;
-            this.ClientSector = trade.ClientSector;
-            this.NextPaymentDate = trade.NextPaymentDate;
-            this.RefDate = trade.RefDate;
-            DoClassification();
-        }
-
-
-        public override string ToString()
-        {
-            return this.TradeClassify.ToString();
-        }
-
-        public void DoClassification()
-        {
-            var diffDataPayment = (this.RefDate - this.NextPaymentDate).TotalDays;
-        
-            if (diffDataPayment > 30) 
+            var diffDataPayment = (_lineTrade.RefDate - _lineTrade.NextPaymentDate).TotalDays;
+            if (diffDataPayment > 30)
             {
-                this.TradeClassify = Classification.DEFAULTED;
+                this.TradeClassify = Classification.DEFAULTED;                
             }
             else
             {
-                this.TradeClassify = Classification.NOCATEGORY;
+                this.TradeClassify = Classification.NOCATEGORY; 
             }
-        }
+            return this.TradeClassify.ToString();
+        }      
     }
 }

@@ -1,17 +1,11 @@
 ﻿using System;
 using TradeClassification.Enums;
+using TradeClassification.Model;
 
 namespace TradeClassification.Interfaces
 {
     public interface ITrade
     {
-        double Value { get;  }
-        string ClientSector { get;  }
-        DateTime NextPaymentDate { get;  }
-        DateTime RefDate { get; }
-        Classification TradeClassify { get; set; }
-
-        public void DoClassification();
-                
+        string DoClassification(LineTrade _lineTrade);
     }
 }

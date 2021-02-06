@@ -1,4 +1,5 @@
 ﻿using System;
+using TradeClassification.Model;
 
 namespace TradeClassification
 {
@@ -21,8 +22,8 @@ namespace TradeClassification
                         double value = Double.Parse(tradeLine[0]);
                         string clientSector = tradeLine[1];
                         DateTime nextPaymentDate = DateTime.Parse(tradeLine[2]);
-                        var context = new Context();
-                        context.DoBusinessLogic(dataRef, value, clientSector, nextPaymentDate);
+                        var context = new Context(new TradeFactory());
+                        context.DoBusinessLogic(new LineTrade( value, clientSector, nextPaymentDate, dataRef));
                         line++;
                     }
                 }

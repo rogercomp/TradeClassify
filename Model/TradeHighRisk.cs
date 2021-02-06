@@ -17,36 +17,22 @@ namespace TradeClassification.Model
 
         }
 
-        public TradeHighRisk(double value, string clientSector, DateTime nextPaymentDate, DateTime refDate)
+        public TradeHighRisk(LineTrade _lineTrade)
         {
-            this.Value = value;
-            this.ClientSector = clientSector;
-            this.NextPaymentDate = nextPaymentDate;
-            this.RefDate = refDate;
-            DoClassification();
+            this.Value = _lineTrade.Value;
+            this.ClientSector = _lineTrade.ClientSector;
+            this.NextPaymentDate = _lineTrade.NextPaymentDate;
+            this.RefDate = _lineTrade.RefDate;
         }
 
-        public TradeHighRisk(ITrade trade)
+        public string DoClassification(LineTrade _lineTrade)
         {
-            this.Value = trade.Value;
-            this.ClientSector = trade.ClientSector;
-            this.NextPaymentDate = trade.NextPaymentDate;
-            this.RefDate = trade.RefDate;
-            DoClassification();
-        }
-
-        public void DoClassification()
-        {
-            if(this.Value > 1000000 && this.ClientSector.ToUpper() == "PRIVATE")
+            if (_lineTrade.Value > 1000000 && _lineTrade.ClientSector.ToUpper() == "PRIVATE")
                this.TradeClassify = Classification.HIGHRISK;
             else
             {
                 this.TradeClassify = Classification.NOCATEGORY;
             }
-        }
-
-        public override string ToString()
-        {
             return this.TradeClassify.ToString();
         }
     }
