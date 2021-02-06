@@ -3,7 +3,7 @@ using TradeClassification.Enums;
 
 namespace TradeClassification.Model
 {
-    public class LineTrade
+    public class LineTradeDTO
     {
         public double Value { get; }
         public string ClientSector { get; }
@@ -11,7 +11,7 @@ namespace TradeClassification.Model
         public DateTime ReferenceDate { get; }
         public Classification TradeClassify { get; set; }
       
-         public LineTrade(double value, string clientSector, DateTime nextPaymentDate, DateTime referenceDate)
+         public LineTradeDTO(double value, string clientSector, DateTime nextPaymentDate, DateTime referenceDate)
          {
              this.Value = value;
              this.ClientSector = clientSector;

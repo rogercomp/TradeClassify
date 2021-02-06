@@ -23,7 +23,7 @@ namespace TradeClassification
                         string clientSector = tradeLine[1];
                         DateTime nextPaymentDate = DateTime.Parse(tradeLine[2]);
                         var context = new Context(new TradeFactory());
-                        context.DoBusinessLogic(new LineTrade( value, clientSector, nextPaymentDate, dataRef));
+                        context.DoBusinessLogic(new LineTradeDTO( value, clientSector, nextPaymentDate, dataRef));
                         line++;
                     }
                 }

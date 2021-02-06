@@ -4,6 +4,6 @@ namespace TradeClassification.Interfaces
 {
     public interface ITradeFactory
     {
-        ITrade GetObjectTrade(LineTrade trade);
+        ITrade GetObjectTrade(LineTradeDTO trade);
     }
 }

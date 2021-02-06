@@ -9,7 +9,7 @@ namespace TradeClassification.Model
         public double Value { get; }
         public string ClientSector { get; }
         public DateTime NextPaymentDate { get; }
-        public Classification TradeClassify { get; set; }
+        public Classification TradeClassify { get; private set; }
         public DateTime ReferenceDate { get; }
 
         public TradeMediumRisk()
@@ -17,7 +17,7 @@ namespace TradeClassification.Model
 
         }       
 
-        public TradeMediumRisk(LineTrade _lineTrade)
+        public TradeMediumRisk(LineTradeDTO _lineTrade)
         {
             this.Value = _lineTrade.Value;
             this.ClientSector = _lineTrade.ClientSector;
@@ -25,14 +25,13 @@ namespace TradeClassification.Model
             this.ReferenceDate = _lineTrade.ReferenceDate;            
         }
              
-
-        public string DoClassification(LineTrade _lineTrade)
+        public string DoClassification()
         {
-            if (_lineTrade.Value > 1000000 && _lineTrade.ClientSector.ToUpper() == "PUBLIC")
+            if (this.Value > 1000000 && this.ClientSector.ToUpper() == "PUBLIC")
                 this.TradeClassify = Classification.MEDIUMRISK;
             else
             {
-                this.TradeClassify = Classification.NOCATEGORY;
+                this.TradeClassify = Classification.NOCATEGORIZED;
             }
             return this.TradeClassify.ToString();
         }

@@ -19,12 +19,12 @@ namespace TradeClassification
             _tradeFactory = tradeFactory;
         }
 
-        List<LineTrade> _linesTrade = new List<LineTrade>();
+        List<LineTradeDTO> _linesTrade = new List<LineTradeDTO>();
 
-        public void DoBusinessLogic(LineTrade _lineTrade)
+        public void DoBusinessLogic(LineTradeDTO _lineTrade)
         {
             ITrade trade = _tradeFactory.GetObjectTrade(_lineTrade);
-            Console.WriteLine(trade.DoClassification(_lineTrade));
+            Console.WriteLine(trade.DoClassification());
         }
     }
 }

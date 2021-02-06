@@ -9,9 +9,9 @@ namespace TradeClassification.Interfaces
         public double Value { get; }
         public string ClientSector { get; }
         public DateTime NextPaymentDate { get; }
-        public Classification TradeClassify { get; set; }
+        public Classification TradeClassify { get; }
         public DateTime ReferenceDate { get; }
 
-        string DoClassification(LineTrade _lineTrade);
+        string DoClassification();
     }
 }
