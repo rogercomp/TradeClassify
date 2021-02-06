@@ -1,4 +1,4 @@
-# TradeClassify
+# TradeClassify - Questão 1
 
 Este projeto consiste em realizar uma classificação de uma negociação(TRADE) baseado em uma lista de negociações passada como argumento
 
@@ -47,8 +47,9 @@ Exemplo:
 "2000000 Privado 29/12/2025"
 ```
 
+# TradeClassify - Questão 2
 
-
+Para realizar essa alteração basta adicionar a propriedade na interface ITrade e criar a nova classe PEP que implementa a interface colocando a estrategia específica, colocar a regra de fabrica de Trade para facilitar a criação de classes.
 
 
 
